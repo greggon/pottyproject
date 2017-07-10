@@ -6,7 +6,7 @@ var options = {
 };
 
 var pgp = require('pg-promise')(options);
-var connectionString = 'postgres://postgres@localhost:5432/pottyproject';
+var connectionString = process.env.DATABASE_URL || 'postgres://postgres@localhost:5432/pottyproject';
 var db = pgp(connectionString);
 
 //add query functions
